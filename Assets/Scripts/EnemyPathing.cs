@@ -29,7 +29,11 @@ public class EnemyPathing : MonoBehaviour
         {
             Vector3 newPosition = splineContainer.Spline.EvaluatePosition(progress);
             Vector3 worldPosition = splineContainer.transform.TransformPoint(newPosition);
+            Vector3 localTan = splineContainer.Spline.EvaluateTangent(progress);
+            Vector3 worldTan = splineContainer.transform.TransformDirection(localTan);
+            Quaternion worldRot = Quaternion.LookRotation(worldTan, Vector3.up);
             transform.position = worldPosition;
+            transform.rotation = worldRot;
         }
     }
 }
