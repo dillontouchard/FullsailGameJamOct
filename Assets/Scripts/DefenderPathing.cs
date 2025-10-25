@@ -6,19 +6,27 @@ using System.Collections;
 
 public class DefenderPathing : MonoBehaviour
 {
-    // Serialize field for spline path
-    [SerializeField] private SplineContainer splineContainer;
+    // Spline path for use in pathing logic
+    private SplineContainer splineContainer;
+    // Movement Speed and Rotation Speed
     public float speed;
     public float rotSpeed;
+    // Progress along the spline
     private float progress;
+    // Distance from target position to stop moving
     private float stopDistance = 0.1f;
+    // Target Position on the spline
     private Vector3 targetPos;
+    // Target Direction for rotation towards enemy
     private Quaternion targetDir;
     private bool isAtTarget = false;
     private bool isRotating = false;
+    // Will be set by the spawner to determine which path to defend, will be used to clear the path when defender is destroyed
+    [HideInInspector] public PathManager.LaneType type;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        splineContainer = PathManager.Instance.paths[(int)type];
         if (splineContainer == null) { return; }
         SetTargetPosition();
     }
@@ -39,6 +47,7 @@ public class DefenderPathing : MonoBehaviour
         MoveToClosestProgress();
     }
 
+    // Sets the target position to the closest point on the spline
     public void SetTargetPosition()
     {
         float closestProgress = SplineUtilities.FindClosestProgressOnSpline(splineContainer.Spline, transform.position);
@@ -47,6 +56,7 @@ public class DefenderPathing : MonoBehaviour
         targetPos = worldPos;
     }
 
+    // Moves the defender towards the target position
     public void MoveToClosestProgress()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
@@ -56,6 +66,7 @@ public class DefenderPathing : MonoBehaviour
         }
     }
 
+    // When at target position, rotate to face the opposite direction of the spline tangent (direction of incoming enemies)
     public IEnumerator RotateTowardsEnemy()
     {
         bool isRotated = false;
@@ -66,7 +77,7 @@ public class DefenderPathing : MonoBehaviour
                 isRotated = true;
             }
             Vector3 localTan = splineContainer.Spline.EvaluateTangent(progress);
-            Vector3 worldTan = splineContainer.transform.TransformDirection(-localTan);
+            Vector3 worldTan = splineContainer.transform.TransformDirection(-localTan); // Negate to face opposite direction of enemy travel
             targetDir = Quaternion.LookRotation(worldTan, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetDir, rotSpeed * Time.deltaTime);
             yield return null;

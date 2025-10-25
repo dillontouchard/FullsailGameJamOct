@@ -1,10 +1,10 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
 public class GuardSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] defenders;
-    [SerializeField] SplineContainer[] splines;
     [SerializeField] Transform spawnPoint;
     [SerializeField] float spawnDelay;
     float spawnTimer;
@@ -22,11 +22,30 @@ public class GuardSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check how many lanes are taken, if all are taken do not spawn more defenders
+        int count = PathManager.Instance.takenPaths.Count();
+        if ( count == 3) { return; }
+        // Increment spawn timer
         spawnTimer += Time.deltaTime;
         if (spawnTimer > spawnDelay)
         {
-            Instantiate(defenders[0], position, Quaternion.LookRotation(Vector3.back, Vector3.up));
-            spawnTimer = 0;
+            GiveDefenderLane();
+        }
+    }
+
+    // Spawns a defender and assigns them to an available lane then resets the spawn timer
+    public void GiveDefenderLane()
+    {
+        foreach (PathManager.LaneType lane in System.Enum.GetValues(typeof(PathManager.LaneType)))
+        {
+            if (!PathManager.Instance.takenPaths.Contains(lane))
+            {
+                GameObject newDefender = Instantiate(defenders[0], position, Quaternion.LookRotation(Vector3.back, Vector3.up));
+                newDefender.GetComponent<DefenderPathing>().type = lane;
+                PathManager.Instance.takenPaths.Add(lane);
+                spawnTimer = 0;
+                return;
+            }
         }
     }
 }

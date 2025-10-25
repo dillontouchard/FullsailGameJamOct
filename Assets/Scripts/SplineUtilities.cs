@@ -3,7 +3,8 @@ using UnityEngine.Splines;
 
 public static class SplineUtilities
 {
-    public static float FindClosestProgressOnSpline(Spline spline, Vector3 point, int sampleCount = 50)
+    // Finds the closest progress (0 to 1) on the spline to the given point
+    public static float FindClosestProgressOnSpline(Spline spline, Vector3 point, int sampleCount = 100)
     {
         float closestProgress = 0f;
         float closestDistanceSqr = float.MaxValue;
