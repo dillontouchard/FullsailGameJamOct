@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour
             {
                 pathingScript.speed = 0;
                 enemyController.SetBool("isFighting", true);
+
             }
         }
     }

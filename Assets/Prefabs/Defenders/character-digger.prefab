@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2069861941882093341}
   - component: {fileID: 7107649316339476104}
   - component: {fileID: 3359887664466250371}
+  - component: {fileID: -6883766865878353877}
   m_Layer: 8
   m_Name: character-digger
   m_TagString: Defender
@@ -139,6 +140,7 @@ MonoBehaviour:
   speed: 1
   rotSpeed: 30
   type: 0
+  defenderAnimator: {fileID: -6883766865878353877}
 --- !u!136 &3359887664466250371
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -162,6 +164,28 @@ CapsuleCollider:
   m_Height: 1.0738728
   m_Direction: 1
   m_Center: {x: -1.3421343e-11, y: 0.37724113, z: 0.023648025}
+--- !u!95 &-6883766865878353877
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088426036902487739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd340e3389cbe5546934c3b17d6fa514, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1465557256316354068
 GameObject:
   m_ObjectHideFlags: 0

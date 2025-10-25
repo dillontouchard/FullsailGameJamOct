@@ -23,6 +23,7 @@ public class DefenderPathing : MonoBehaviour
     private bool isRotating = false;
     // Will be set by the spawner to determine which path to defend, will be used to clear the path when defender is destroyed
     [HideInInspector] public PathManager.LaneType type;
+    [SerializeField] Animator defenderAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,10 +60,12 @@ public class DefenderPathing : MonoBehaviour
     // Moves the defender towards the target position
     public void MoveToClosestProgress()
     {
+        defenderAnimator.SetBool("isWalking", true);
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, targetPos) <= stopDistance)
         {
             isAtTarget = true;
+            defenderAnimator.SetBool("isWalking", false);
         }
     }
 
