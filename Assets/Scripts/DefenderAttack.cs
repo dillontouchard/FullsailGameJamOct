@@ -1,12 +1,22 @@
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class DefenderAttack : MonoBehaviour
+public class DefenderAttack : MonoBehaviour, IDamage
 {
     [SerializeField] DefenderPathing pathingScript;
     [SerializeField] Animator defenderController;
     // Head GameObject for raycasting to avoid ray starting at feet
     [SerializeField] GameObject head;
+    // Arm Collider to unhide when attacking, set in animation event
+    [SerializeField] BoxCollider armCollider;
+    [SerializeField] int damageAmount;
+    [SerializeField] int IDamage.DamageAmount => damageAmount;
+
+
+    private void Start()
+    {
+        armCollider = GetComponentInChildren<BoxCollider>();
+    }
     void Update()
     {
         Ray ray = new Ray(head.transform.position, head.transform.forward * 0.2f);
@@ -19,5 +29,31 @@ public class DefenderAttack : MonoBehaviour
                 defenderController.SetBool("isFighting", true);
             }
         }
+        else
+        {
+            defenderController.SetBool("isFighting", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            IDamageable damageable = other.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(damageAmount);
+            }
+        }
+    }
+
+    public void UnhideArmCollider()
+    {
+        armCollider.enabled = true;
+    }
+
+    public void HideArmCollider()
+    {
+        armCollider.enabled = false;
     }
 }

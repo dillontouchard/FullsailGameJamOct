@@ -3538,6 +3538,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!65 &745693247 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1460931042354046795, guid: f742cdef3c8930f4c89f9ab952b42183, type: 3}
+  m_PrefabInstance: {fileID: 6257348519030674554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &760380734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8262776204175389617, guid: 244b55da6685e74459c9e190f1cba25c, type: 3}
@@ -7268,11 +7273,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!95 &1588358064 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1283147371981890326, guid: f742cdef3c8930f4c89f9ab952b42183, type: 3}
-  m_PrefabInstance: {fileID: 6257348519030674554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1592866508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9882,9 +9882,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8142701261362482032, guid: f742cdef3c8930f4c89f9ab952b42183, type: 3}
-      propertyPath: enemyController
+      propertyPath: armCollider
       value: 
-      objectReference: {fileID: 1588358064}
+      objectReference: {fileID: 745693247}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

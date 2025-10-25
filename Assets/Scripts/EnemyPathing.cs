@@ -8,11 +8,13 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] private SplineContainer splineContainer;
     // Movement speed along the spline
     public float speed;
+    private float speedCopy;
     // Progress along the spline
     private float progress;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        speedCopy = speed;
         SetSpawnOnSpline();
     }
 
@@ -50,5 +52,11 @@ public class EnemyPathing : MonoBehaviour
         Quaternion worldRot = Quaternion.LookRotation(worldTan, Vector3.up);
         transform.position = worldPosition;
         transform.rotation = worldRot;
+    }
+
+    // Resets the speed to a default value
+    public void ResetSpeed()
+    {
+        speed = speedCopy;
     }
 }

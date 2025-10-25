@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4210757351377051315}
+  - component: {fileID: 4663434309565399230}
   - component: {fileID: 1820968533495196766}
   - component: {fileID: 8142701261362482032}
   - component: {fileID: -3340149695334673984}
+  - component: {fileID: 6291501091570463687}
   - component: {fileID: 1283147371981890326}
   m_Layer: 7
   m_Name: character-vampire
@@ -36,6 +38,20 @@ Transform:
   - {fileID: 2606952806002788339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4663434309565399230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066169351462306768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7919a94920d85041a9ce3d97a8201bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stats
+  health: 100
+  animator: {fileID: 1283147371981890326}
 --- !u!114 &1820968533495196766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +81,8 @@ MonoBehaviour:
   pathingScript: {fileID: 1820968533495196766}
   enemyController: {fileID: 1283147371981890326}
   head: {fileID: 1794447889539553311}
+  armCollider: {fileID: 0}
+  damageAmount: 15
 --- !u!136 &-3340149695334673984
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -78,9 +96,9 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -88,6 +106,33 @@ CapsuleCollider:
   m_Height: 0.92942846
   m_Direction: 1
   m_Center: {x: -0.018674493, y: 0.40922016, z: -0.03053996}
+--- !u!54 &6291501091570463687
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066169351462306768}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &1283147371981890326
 Animator:
   serializedVersion: 7
@@ -422,6 +467,7 @@ GameObject:
   - component: {fileID: 6615951622983470794}
   - component: {fileID: 2869550368578670838}
   - component: {fileID: 1085764464067156273}
+  - component: {fileID: 1460931042354046795}
   m_Layer: 7
   m_Name: arm_left
   m_TagString: Untagged
@@ -500,6 +546,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1460931042354046795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775463254966882431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.46719676, y: 0.14172184, z: 0.1517132}
+  m_Center: {x: -0.18359837, y: 0.030795999, z: 0.020060599}
 --- !u!1 &6134098490907829380
 GameObject:
   m_ObjectHideFlags: 0
