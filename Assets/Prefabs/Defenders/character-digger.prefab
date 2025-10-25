@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefenderPathing
   splineContainer: {fileID: 0}
   speed: 1
+  rotSpeed: 30
 --- !u!1 &1465557256316354068
 GameObject:
   m_ObjectHideFlags: 0
