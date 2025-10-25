@@ -13,6 +13,8 @@ public class TowerManager : MonoBehaviour
     // Private variables for placing towers in the scene
     private bool isPlacingTower = false;
     private GameObject towerToPlace;
+    [SerializeField] private float placementCheckArea;
+    private bool isValidPlacement = false;
     void Awake()
     {
         if(Instance != this)
@@ -30,7 +32,9 @@ public class TowerManager : MonoBehaviour
         if (isPlacingTower)
         {
             FollowMouse();
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            isValidPlacement = IsValidPlacement();
+            SetPreviewColor(isValidPlacement ? Color.green : Color.red);
+            if (Mouse.current.leftButton.wasPressedThisFrame && isValidPlacement)
             {
                 PlaceTower();
             }
@@ -58,5 +62,22 @@ public class TowerManager : MonoBehaviour
         isPlacingTower = false;
         Instantiate(towers[towerIndex], towerToPlace.transform.position, Quaternion.identity);
         Destroy(towerToPlace);
+        isValidPlacement = false;
+    }
+
+    public bool IsValidPlacement()
+    {
+        Vector3 location = new( towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 10);
+        Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Obstacle"));
+        return overlaps.Length == 0;
+    }
+
+    public void SetPreviewColor(Color color)
+    {
+        Renderer[] renderer = towerToPlace.GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderer)
+        {
+            rend.material.color = color;
+        }
     }
 }
