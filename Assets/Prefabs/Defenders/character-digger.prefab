@@ -98,6 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069861941882093341}
+  - component: {fileID: 7107649316339476104}
   m_Layer: 0
   m_Name: character-digger
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088426036902487739}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999947, z: -0, w: 0.003260126}
+  m_LocalRotation: {x: 0, y: -0.99999475, z: 0, w: 0.0032637292}
   m_LocalPosition: {x: 11.298094, y: -0.0000009536743, z: 5.459073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -121,6 +122,20 @@ Transform:
   - {fileID: 6463480706731961033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -179.626, z: 0}
+--- !u!114 &7107649316339476104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088426036902487739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69e4bdf33b2f4547ab15281abedfb8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefenderPathing
+  splineContainer: {fileID: 0}
+  speed: 1
 --- !u!1 &1465557256316354068
 GameObject:
   m_ObjectHideFlags: 0
