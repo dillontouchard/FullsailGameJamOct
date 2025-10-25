@@ -67,7 +67,7 @@ public class TowerManager : MonoBehaviour
 
     public bool IsValidPlacement()
     {
-        Vector3 location = new( towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 10);
+        Vector3 location = new( towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 6);
         Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Obstacle"));
         return overlaps.Length == 0;
     }

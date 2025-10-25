@@ -7,7 +7,7 @@ using System.Collections;
 public class DefenderPathing : MonoBehaviour
 {
     // Spline path for use in pathing logic
-    private SplineContainer splineContainer;
+    [SerializeField] private SplineContainer splineContainer;
     // Movement Speed and Rotation Speed
     public float speed;
     public float rotSpeed;
