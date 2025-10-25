@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1283147371981890326}
   m_Layer: 7
   m_Name: character-vampire
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   pathingScript: {fileID: 1820968533495196766}
+  enemyController: {fileID: 1283147371981890326}
   head: {fileID: 1794447889539553311}
 --- !u!136 &-3340149695334673984
 CapsuleCollider:

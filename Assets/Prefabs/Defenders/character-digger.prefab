@@ -99,6 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069861941882093341}
   - component: {fileID: 7107649316339476104}
+  - component: {fileID: -7261904139099105930}
   - component: {fileID: 3359887664466250371}
   - component: {fileID: -6883766865878353877}
   m_Layer: 8
@@ -141,6 +142,21 @@ MonoBehaviour:
   rotSpeed: 30
   type: 0
   defenderAnimator: {fileID: -6883766865878353877}
+--- !u!114 &-7261904139099105930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088426036902487739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b0794ba9d6b5942b7cdf348aadfbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefenderAttack
+  pathingScript: {fileID: 7107649316339476104}
+  defenderController: {fileID: -6883766865878353877}
+  head: {fileID: 1465557256316354068}
 --- !u!136 &3359887664466250371
 CapsuleCollider:
   m_ObjectHideFlags: 0
