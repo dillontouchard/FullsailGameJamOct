@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea46426069de43840847d612f2342689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  towers:
+  - {fileID: 3286683277254585571, guid: b10999246f33e4e4eb23cef5c32aa33e, type: 3}
+  towerOutlines:
+  - {fileID: 6191331752566783324, guid: 4bb619ef8c8f33049b482e2249007bc9, type: 3}
+  isPickingTower: 0
+  towerIndex: 0
+  mainCamera: {fileID: 0}
+  placementCheckArea: 2
