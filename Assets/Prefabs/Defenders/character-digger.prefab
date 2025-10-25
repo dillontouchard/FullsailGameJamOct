@@ -134,9 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69e4bdf33b2f4547ab15281abedfb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefenderPathing
-  splineContainer: {fileID: 0}
   speed: 1
   rotSpeed: 30
+  setTargetDelay: 1
+  type: 0
 --- !u!1 &1465557256316354068
 GameObject:
   m_ObjectHideFlags: 0

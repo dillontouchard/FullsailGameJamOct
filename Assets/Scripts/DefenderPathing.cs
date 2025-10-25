@@ -50,7 +50,7 @@ public class DefenderPathing : MonoBehaviour
     // Sets the target position to the closest point on the spline
     public void SetTargetPosition()
     {
-        float closestProgress = SplineUtilities.FindClosestProgressOnSpline(splineContainer.Spline, transform.position);
+        float closestProgress = SplineUtilities.FindClosestProgressOnSpline(splineContainer, transform.position);
         Vector3 localPosition = splineContainer.Spline.EvaluatePosition(closestProgress);
         Vector3 worldPos = splineContainer.transform.TransformPoint(localPosition);
         targetPos = worldPos;
