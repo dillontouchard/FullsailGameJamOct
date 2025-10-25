@@ -10139,6 +10139,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8664633823090564146, guid: cf0515ca5b051d24ab6e0be368a15e54, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10160,6 +10164,14 @@ PrefabInstance:
       propertyPath: 'towers.Array.data[0]'
       value: 
       objectReference: {fileID: 3286683277254585571, guid: b10999246f33e4e4eb23cef5c32aa33e, type: 3}
+    - target: {fileID: 2381915044553060176, guid: e1b879b90de9bc246845aa78312d1837, type: 3}
+      propertyPath: towerOutlines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381915044553060176, guid: e1b879b90de9bc246845aa78312d1837, type: 3}
+      propertyPath: 'towerOutlines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6191331752566783324, guid: 4bb619ef8c8f33049b482e2249007bc9, type: 3}
     - target: {fileID: 6269041745758197489, guid: e1b879b90de9bc246845aa78312d1837, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.16967
