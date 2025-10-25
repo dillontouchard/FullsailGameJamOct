@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4009825894934849168}
   - component: {fileID: 7584474701951792882}
   - component: {fileID: 4063055149882448667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2069861941882093341}
   - component: {fileID: 7107649316339476104}
-  m_Layer: 0
+  - component: {fileID: 3359887664466250371}
+  m_Layer: 8
   m_Name: character-digger
   m_TagString: Defender
   m_Icon: {fileID: 0}
@@ -138,6 +139,29 @@ MonoBehaviour:
   speed: 1
   rotSpeed: 30
   type: 0
+--- !u!136 &3359887664466250371
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088426036902487739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.30975378
+  m_Height: 1.0738728
+  m_Direction: 1
+  m_Center: {x: -1.3421343e-11, y: 0.37724113, z: 0.023648025}
 --- !u!1 &1465557256316354068
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +173,7 @@ GameObject:
   - component: {fileID: 9158467183546047344}
   - component: {fileID: 1947422529674683603}
   - component: {fileID: 4052138263994209316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +262,7 @@ GameObject:
   - component: {fileID: 8563280419653729445}
   - component: {fileID: 6957067870325907506}
   - component: {fileID: 8109113220916617378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +351,7 @@ GameObject:
   - component: {fileID: 4705374520349056009}
   - component: {fileID: 3236474127559202352}
   - component: {fileID: 7983285057754771122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +443,7 @@ GameObject:
   - component: {fileID: 9063001521883786045}
   - component: {fileID: 6967062016412228972}
   - component: {fileID: 7253864605358343174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6463480706731961033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +566,7 @@ GameObject:
   - component: {fileID: 8928500118716237083}
   - component: {fileID: 6189764235924987212}
   - component: {fileID: 2690062370982308181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,7 +8,7 @@ public static class SplineUtilities
     {
         float closestProgress = 0f;
         float closestDistanceSqr = float.MaxValue;
-        for (float i = 0.0f; i <= length; i+=0.01f)
+        for (float i = 0.0f; i <= length; i+=0.05f)
         {
             Vector3 localPosition = spline.Spline.EvaluatePosition(i);
             Vector3 worldSplinePoint = spline.transform.TransformPoint(localPosition);
