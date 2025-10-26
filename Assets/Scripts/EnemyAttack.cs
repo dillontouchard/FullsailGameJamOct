@@ -19,19 +19,14 @@ public class EnemyAttack : MonoBehaviour, IDamage
     void Update()
     {
         Ray ray = new Ray(head.transform.position, head.transform.forward * 0.2f);
-        Debug.DrawRay(ray.origin, head.transform.forward * 0.25f, Color.red);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 0.25f, LayerMask.GetMask("Defender")))
+        Debug.DrawRay(ray.origin, head.transform.forward * 0.4f, Color.red);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 0.4f, LayerMask.GetMask("Defender")))
         {
             if (hitInfo.collider.CompareTag("Defender"))
             {
                 pathingScript.speed = 0;
                 enemyController.SetBool("isFighting", true);
             }
-        }
-        else
-        {
-            enemyController.SetBool("isFighting", false);
-            pathingScript.ResetSpeed();
         }
     }
 
