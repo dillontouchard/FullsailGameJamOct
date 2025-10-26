@@ -24,7 +24,7 @@ public class DefenderPathing : MonoBehaviour
     // Will be set by the spawner to determine which path to defend, will be used to clear the path when defender is destroyed
     [HideInInspector] public PathManager.LaneType type;
     [SerializeField] Animator defenderAnimator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         splineContainer = PathManager.Instance.paths[(int)type];

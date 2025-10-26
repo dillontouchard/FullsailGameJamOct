@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class DefenderAttack : MonoBehaviour, IDamage
@@ -36,7 +35,6 @@ public class DefenderAttack : MonoBehaviour, IDamage
             defenderController.SetBool("isFighting", false);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

@@ -10,11 +10,13 @@ public class TowerManager : MonoBehaviour
     public int towerIndex = 0;
     [SerializeField] Camera mainCamera;
     [SerializeField] private float placementCheckArea;
+    [SerializeField] private float throwerPlacementCheckArea;
     public bool isPickingTower = false;
     private bool isPlacingTower = false;
     private bool isValidPlacement = false;
     private bool isPlacingThrower = false;
     private GameObject towerToPlace;
+
     void Awake()
     {
         if(Instance != this)
@@ -83,14 +85,14 @@ public class TowerManager : MonoBehaviour
     public bool IsValidHousePlacement()
     {
         Vector3 location = new( towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 6);
-        Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Obstacle"));
+        Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Obstacle", "HighGround"));
         return overlaps.Length == 0;
     }
 
     public bool IsValidThrowerPlacement()
     {
         Vector3 location = new(towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 6);
-        Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Ground"));
+        Collider[] overlaps = Physics.OverlapSphere(location, throwerPlacementCheckArea, LayerMask.GetMask("Ground", "Obstacle"));
         return overlaps.Length == 0;
     }
 

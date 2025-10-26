@@ -18,7 +18,6 @@ public class EnemyPathing : MonoBehaviour
         SetSpawnOnSpline();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (splineContainer == null) { return; }

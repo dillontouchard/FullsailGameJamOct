@@ -46,9 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
   towers:
   - {fileID: 3286683277254585571, guid: b10999246f33e4e4eb23cef5c32aa33e, type: 3}
+  - {fileID: 2806635246295858315, guid: fc3524ef6703f8b4aa683ef3587e1f8f, type: 3}
   towerOutlines:
   - {fileID: 6191331752566783324, guid: 4bb619ef8c8f33049b482e2249007bc9, type: 3}
-  isPickingTower: 0
+  - {fileID: 8395997286368990156, guid: f12d4952b6c56b041aa046ea8aed8905, type: 3}
   towerIndex: 0
   mainCamera: {fileID: 0}
   placementCheckArea: 2
+  throwerPlacementCheckArea: 0.05
+  isPickingTower: 0

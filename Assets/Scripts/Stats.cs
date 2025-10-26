@@ -16,6 +16,7 @@ public class Stats : MonoBehaviour, IDamageable
 
     public void Dead()
     {
+        GameManager.Instance.numOfEnemies--;
         Destroy(gameObject);
     }
 }
