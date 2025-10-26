@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonFunctions
   defensesButton: {fileID: 3532197845977307918}
-  guardHouseButton: {fileID: 2221582225911546201}
+  guardHouseButton: {fileID: 7844815501446364314}
   creditsPanel: {fileID: 0}
   mainMenuPanel: {fileID: 0}
 --- !u!1 &7844815501446364314

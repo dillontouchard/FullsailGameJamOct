@@ -7,14 +7,14 @@ public class TowerManager : MonoBehaviour
 
     public GameObject[] towers;
     public GameObject[] towerOutlines;
-    public bool isPickingTower = false;
     public int towerIndex = 0;
     [SerializeField] Camera mainCamera;
-    // Private variables for placing towers in the scene
-    private bool isPlacingTower = false;
-    private GameObject towerToPlace;
     [SerializeField] private float placementCheckArea;
+    public bool isPickingTower = false;
+    private bool isPlacingTower = false;
     private bool isValidPlacement = false;
+    private bool isPlacingThrower = false;
+    private GameObject towerToPlace;
     void Awake()
     {
         if(Instance != this)
@@ -25,23 +25,38 @@ public class TowerManager : MonoBehaviour
 
     void Update()
     {
-        if(isPickingTower)
+        if (isPickingTower)
         {
             towerToPlace = PickTowerOutline(towerIndex);
         }
-        if (isPlacingTower)
+        if (isPlacingTower && !isPlacingThrower)
         {
             FollowMouse();
-            isValidPlacement = IsValidPlacement();
+            isValidPlacement = IsValidHousePlacement();
             SetPreviewColor(isValidPlacement ? Color.green : Color.red);
             if (Mouse.current.leftButton.wasPressedThisFrame && isValidPlacement)
             {
                 PlaceTower();
             }
         }
+        else if (isPlacingTower && isPlacingThrower)
+        {
+            FollowMouse();
+            isValidPlacement = IsValidThrowerPlacement();
+            SetPreviewColor(isValidPlacement ? Color.green : Color.red);
+            if (Mouse.current.leftButton.wasPressedThisFrame && isValidPlacement)
+            {
+                PlaceTower();
+                isPlacingThrower = false;
+            }
+        }
     }
     public GameObject PickTowerOutline(int towerIndex)
     {
+        if(towerIndex == 1)
+        {
+            isPlacingThrower = true;
+        }
         GameObject placing = Instantiate(towerOutlines[towerIndex]);
         isPickingTower = false;
         isPlacingTower = true;
@@ -65,10 +80,17 @@ public class TowerManager : MonoBehaviour
         isValidPlacement = false;
     }
 
-    public bool IsValidPlacement()
+    public bool IsValidHousePlacement()
     {
         Vector3 location = new( towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 6);
         Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Obstacle"));
+        return overlaps.Length == 0;
+    }
+
+    public bool IsValidThrowerPlacement()
+    {
+        Vector3 location = new(towerToPlace.transform.position.x, towerToPlace.transform.position.y, towerToPlace.transform.position.z + 6);
+        Collider[] overlaps = Physics.OverlapSphere(location, placementCheckArea, LayerMask.GetMask("Ground"));
         return overlaps.Length == 0;
     }
 

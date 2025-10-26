@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPathing
   splineContainer: {fileID: 0}
   speed: 1
+  isMoving: 0
 --- !u!114 &8142701261362482032
 MonoBehaviour:
   m_ObjectHideFlags: 0
