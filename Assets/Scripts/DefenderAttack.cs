@@ -11,6 +11,7 @@ public class DefenderAttack : MonoBehaviour, IDamage
     [SerializeField] BoxCollider armCollider;
     [SerializeField] int damageAmount;
     [SerializeField] int IDamage.DamageAmount => damageAmount;
+    private RaycastHit opponent;
 
 
     private void Start()
@@ -25,9 +26,14 @@ public class DefenderAttack : MonoBehaviour, IDamage
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
+                opponent = hitInfo;
                 defenderController.SetBool("isWalking", false);
                 defenderController.SetBool("isFighting", true);
             }
+        }
+        else if (opponent.collider == null)
+        {
+            defenderController.SetBool("isFighting", false);
         }
     }
 

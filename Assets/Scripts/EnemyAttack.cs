@@ -10,6 +10,7 @@ public class EnemyAttack : MonoBehaviour, IDamage
     [SerializeField] BoxCollider armCollider;
     [SerializeField] int damageAmount;
     [SerializeField] int IDamage.DamageAmount => damageAmount;
+    private RaycastHit opponent;
 
     void Start()
     {
@@ -24,10 +25,17 @@ public class EnemyAttack : MonoBehaviour, IDamage
         {
             if (hitInfo.collider.CompareTag("Defender"))
             {
+                opponent = hitInfo;
                 pathingScript.speed = 0;
                 enemyController.SetBool("isFighting", true);
-            }
+            } 
         }
+        else if (opponent.collider == null)
+        {
+            enemyController.SetBool("isFighting", false);
+            pathingScript.ResetSpeed();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

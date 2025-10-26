@@ -9,9 +9,9 @@ public class EnemyPathing : MonoBehaviour
     // Movement speed along the spline
     public float speed;
     private float speedCopy;
+    [HideInInspector] public bool isMoving;
     // Progress along the spline
     private float progress;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speedCopy = speed;
@@ -45,6 +45,7 @@ public class EnemyPathing : MonoBehaviour
     // Moves the enemy along the spline and rotates it to face the direction of travel
     public void MoveAndRotate()
     {
+        isMoving = true;
         Vector3 newPosition = splineContainer.Spline.EvaluatePosition(progress);
         Vector3 worldPosition = splineContainer.transform.TransformPoint(newPosition);
         Vector3 localTan = splineContainer.Spline.EvaluateTangent(progress);
