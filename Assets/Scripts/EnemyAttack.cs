@@ -35,7 +35,6 @@ public class EnemyAttack : MonoBehaviour, IDamage
             enemyController.SetBool("isFighting", false);
             pathingScript.ResetSpeed();
         }
-
     }
 
     private void OnTriggerEnter(Collider other)

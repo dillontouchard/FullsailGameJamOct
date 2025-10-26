@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6969468219310584330}
+      - m_Target: {fileID: 3322825914623333989}
         m_TargetAssemblyTypeName: UIButtonFunctions, Assembly-CSharp
         m_MethodName: SelectGuardHouse
         m_Mode: 1
@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 2257890553625867121}
   - component: {fileID: 968957699900554273}
   - component: {fileID: 4760233415306200025}
-  - component: {fileID: 1821164644823840293}
   m_Layer: 5
   m_Name: Defenses
   m_TagString: Untagged
@@ -390,7 +389,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1821164644823840293}
+      - m_Target: {fileID: 3322825914623333989}
         m_TargetAssemblyTypeName: UIButtonFunctions, Assembly-CSharp
         m_MethodName: OpenDefenses
         m_Mode: 1
@@ -402,20 +401,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1821164644823840293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3532197845977307918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d39a68b28f3df4683c9f40b59f0f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIButtonFunctions
-  defensesButton: {fileID: 3532197845977307918}
-  guardHouseButton: {fileID: 7844815501446364314}
 --- !u!1 &5472261259968100787
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +549,7 @@ GameObject:
   - component: {fileID: 557359878764402740}
   - component: {fileID: 988601771370630865}
   - component: {fileID: 6348386809368554533}
+  - component: {fileID: 3322825914623333989}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -655,6 +641,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3322825914623333989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794321749809608471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d39a68b28f3df4683c9f40b59f0f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonFunctions
+  defensesButton: {fileID: 3532197845977307918}
+  guardHouseButton: {fileID: 2221582225911546201}
+  creditsPanel: {fileID: 0}
+  mainMenuPanel: {fileID: 0}
 --- !u!1 &7844815501446364314
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9048741980156736726}
-  - component: {fileID: 6969468219310584330}
   m_Layer: 5
   m_Name: GuardSpawner
   m_TagString: Untagged
@@ -693,17 +694,3 @@ RectTransform:
   m_AnchoredPosition: {x: -209, y: 95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6969468219310584330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7844815501446364314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d39a68b28f3df4683c9f40b59f0f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIButtonFunctions
-  defensesButton: {fileID: 3532197845977307918}
-  guardHouseButton: {fileID: 7844815501446364314}
